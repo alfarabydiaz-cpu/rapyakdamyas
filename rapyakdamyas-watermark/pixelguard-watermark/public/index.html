@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101d2b">
+  <meta name="description" content="Lindungi identitas karya foto dengan watermark tak kasatmata.">
+  <title>rapyakdamyas — Lindungi Karya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="rapyakdamyas beranda">
+      <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 27 7v8c0 7-4.8 11.6-11 14C9.8 26.6 5 22 5 15V7z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m11 16 3.2 3.2L21.5 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span>pixel<span class="brand-light">guard</span><small>CREATOR TOOLS</small></span>
+    </a>
+    <nav><a class="active" href="#workspace">Studio</a><a href="#how-it-works">Cara kerja</a><a href="#about">Tentang</a></nav>
+    <a class="top-cta" href="#workspace">Mulai gratis <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> DIGITAL OWNERSHIP, MADE SIMPLE</div>
+      <h1>Lindungi karya.<br><span>Tanpa mengubah tampilan.</span></h1>
+      <p class="hero-copy">Sisipkan identitas kreator ke dalam foto secara tak kasatmata. Karya tetap terlihat seperti aslinya, identitasmu ikut bersamanya.</p>
+      <div class="hero-points"><span><i>✓</i> Tak terlihat secara visual</span><span><i>✓</i> Verifikasi mudah</span><span><i>✓</i> Gratis digunakan</span></div>
+    </section>
+
+    <section class="workspace" id="workspace">
+      <div class="workspace-head">
+        <div><div class="section-kicker">YOUR CREATIVE WORKSPACE</div><h2>Studio watermark</h2><p>Tambahkan penanda kepemilikan ke dalam gambar.</p></div>
+        <div class="secure-pill"><span>✳</span> Pemrosesan lokal server</div>
+      </div>
+      <div class="work-grid">
+        <div class="panel input-panel">
+          <div class="step-label"><span>01</span> IDENTITAS KREATOR</div>
+          <label for="creator">Nama kreator / pengguna</label>
+          <div class="input-wrap"><span class="user-icon">＠</span><input id="creator" maxlength="80" placeholder="Contoh: rapyakdamyas" autocomplete="name"><span class="char-count" id="char-count">0/80</span></div>
+          <div class="step-label upload-label"><span>02</span> PILIH GAMBAR</div>
+          <input type="file" id="image-input" accept="image/jpeg,image/png,image/webp" hidden>
+          <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Pilih atau jatuhkan foto">
+            <div class="upload-symbol"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 21V5m0 0-6 6m6-6 6 6M6 20v6h20v-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <strong>Letakkan foto di sini</strong><span>atau <b>pilih file</b> dari perangkatmu</span>
+            <small>JPG, PNG, WEBP <i>·</i> Maks. 15 MB</small>
+          </div>
+          <div class="selected-file" id="selected-file" hidden><span class="file-icon">▧</span><div><b id="file-name">foto.jpg</b><small id="file-meta">0 KB</small></div><button id="remove-file" aria-label="Hapus foto" type="button">×</button></div>
+          <div class="form-error" id="form-error" role="alert" hidden></div>
+          <button class="primary-button" id="watermark-btn" type="button"><span>✧</span> Sisipkan watermark <span class="button-arrow">↗</span></button>
+          <p class="fine-print"><span>♧</span> Gambar hanya diproses untuk permintaan ini.</p>
+        </div>
+
+        <div class="panel preview-panel">
+          <div class="preview-top"><div><div class="step-label"><span>03</span> PRATINJAU GAMBAR</div><h3>Hasil karyamu</h3></div><span class="preview-tag" id="preview-tag">MENUNGGU FOTO</span></div>
+          <div class="image-stage" id="image-stage">
+            <div class="empty-preview" id="empty-preview"><div class="landscape-icon"><svg viewBox="0 0 100 72" aria-hidden="true"><rect x="7" y="7" width="86" height="58" rx="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="70" cy="23" r="6" fill="currentColor" opacity=".65"/><path d="m15 55 22-23 14 14 11-10 23 19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><b>Ruang untuk karyamu</b><span>Foto yang dipilih akan muncul di sini.</span></div>
+            <img id="preview-image" alt="Pratinjau foto yang dipilih" hidden>
+            <div class="image-overlay" id="image-overlay" hidden><span>✦ rapyakdamyas READY</span></div>
+            <div class="processing" id="processing" hidden><div class="spinner"></div><b>Sedang memproses...</b><span>Menanam identitas secara tak kasatmata</span></div>
+          </div>
+          <div class="image-details"><div><span>FORMAT</span><b id="detail-format">—</b></div><div><span>DIMENSI</span><b id="detail-dimensions">—</b></div><div><span>UKURAN</span><b id="detail-size">—</b></div></div>
+          <div class="result-box" id="result-box" hidden><span class="result-icon">✓</span><div><b id="result-title">Watermark berhasil disisipkan</b><span id="result-message">Identitas kreator sudah ditanam pada gambar.</span></div><a id="download-link" href="#" download="rapyakdamyas-watermarked.png">Unduh PNG ↓</a></div>
+          <div class="preview-note"><span>ⓘ</span><p>Watermark dirancang agar tidak mengganggu tampilan foto. Hasilnya tetap perlu diuji setelah kompresi atau pengeditan.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="verify-section" id="verify">
+      <div class="verify-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="13.5" cy="13.5" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20 7 7M10 13l2.5 2.5L17 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="verify-copy"><div class="section-kicker">CHECK THE SIGNAL</div><h2>Sudah ada watermark?</h2><p>Periksa apakah foto mengandung watermark rapyakdamyas dan baca nama kreatornya jika terdeteksi.</p></div>
+      <div class="verify-action"><input type="file" id="verify-input" accept="image/jpeg,image/png,image/webp" hidden><button class="secondary-button" id="verify-btn" type="button">Pilih foto untuk verifikasi <span>↗</span></button><div class="verify-result" id="verify-result" role="status" hidden></div></div>
+    </section>
+
+    <section class="features" id="how-it-works">
+      <div class="section-kicker">BUILT FOR YOUR CREATIVE JOURNEY</div><h2>Perlindungan yang bekerja di balik layar.</h2>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-icon mint">◌</div><h3>Tak kasatmata</h3><p>Identitas disisipkan pada frekuensi gambar, bukan sebagai teks yang menutupi foto.</p><span>01 / DISCREET</span></article>
+        <article class="feature-card"><div class="feature-icon violet">⌁</div><h3>Dirancang untuk bertahan</h3><p>Pengulangan sinyal membantu pembacaan, meski ketahanan bergantung pada perubahan gambar.</p><span>02 / RESILIENT</span></article>
+        <article class="feature-card"><div class="feature-icon amber">⌕</div><h3>Verifikasi sederhana</h3><p>Unggah gambar untuk memeriksa sinyal watermark rapyakdamyas dan nama kreator.</p><span>03 / VERIFIABLE</span></article>
+      </div>
+    </section>
+    <section class="about-strip" id="about"><div class="mini-brand">PG<span>✳</span></div><p><b>rapyakdamyas</b> dibuat untuk membantu kreator memberi penanda pada karya digital mereka.</p><span class="about-label">MADE FOR CREATORS</span></section>
+  </main>
+  <footer><span>© 2026 rapyakdamyas Studio</span><span>Jaga karya orisinal. Hargai setiap kreator.</span><a href="#workspace">Kembali ke atas ↑</a></footer>
+  <script src="/app.js"></script>
+</body>
+</html>

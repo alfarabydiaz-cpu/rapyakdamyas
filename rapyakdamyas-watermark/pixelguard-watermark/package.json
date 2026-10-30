@@ -1,0 +1,16 @@
+{
+  "name": "rapyakdamyas-watermark",
+  "version": "1.0.0",
+  "description": "Invisible creator watermark web app using Node.js, Express and block-DCT embedding",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.5"
+  }
+}
